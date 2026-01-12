@@ -221,8 +221,10 @@ function generateComplaint(index: number, assets: Asset[]): Complaint {
   const categories = ["Road Damage", "Drain Blockage", "Streetlight Outage", "Waste Collection", "Tree Hazard", "Building Issue", "Other"]
   const ward = randomElement(WARDS)
   const asset = Math.random() > 0.3 ? randomElement(assets.filter(a => a.ward === ward)) : null
-  const sentiment = randomElement(["positive", "neutral", "negative"])
-  const priority = sentiment === "negative" && Math.random() > 0.5 ? "high" : randomElement(["low", "medium", "high"])
+  const sentimentOptions = ["positive", "neutral", "negative"] as const
+  const sentiment = randomElement(sentimentOptions) as "positive" | "neutral" | "negative"
+  const priorityOptions = ["low", "medium", "high"] as const
+  const priority: SeverityLevel = sentiment === "negative" && Math.random() > 0.5 ? "high" : (randomElement(priorityOptions) as SeverityLevel)
   const status = randomElement(STATUS_OPTIONS)
   const now = new Date()
   const createdAt = randomDate(new Date(now.getTime() - 60 * 24 * 60 * 60 * 1000), now)
