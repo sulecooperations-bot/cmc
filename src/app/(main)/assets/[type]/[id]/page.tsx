@@ -19,14 +19,6 @@ import {
 } from "lucide-react"
 import { CityGridCanvas } from "@/components/city-grid-canvas"
 
-// Generate static params for static export
-export function generateStaticParams() {
-  return mockData.assets.map((asset) => ({
-    type: asset.type,
-    id: asset.id,
-  }))
-}
-
 export default function AssetDetailPage() {
   const params = useParams()
   const assetId = params.id as string
