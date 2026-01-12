@@ -279,8 +279,10 @@ function generateCrew(index: number): Crew {
   const leads = ["Nimal Perera", "Kamal Silva", "Priya Fernando", "Rohan Jayasuriya", "Anjali Wickramasinghe", "Suresh Mendis"]
   const members = ["Member 1", "Member 2", "Member 3", "Member 4"]
   const equipment = ["Truck", "Tools", "Safety Gear", "Communication"]
-  const availability = randomElement(["available", "on_duty", "off_duty"])
-  const shift = randomElement(["morning", "afternoon", "night"])
+  const availabilityOptions = ["available", "on_duty", "off_duty"] as const
+  const availability = randomElement(availabilityOptions) as "available" | "on_duty" | "off_duty"
+  const shiftOptions = ["morning", "afternoon", "night"] as const
+  const shift = randomElement(shiftOptions) as "morning" | "afternoon" | "night"
 
   return {
     id: `crew-${index.toString().padStart(3, "0")}`,
