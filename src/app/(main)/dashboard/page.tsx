@@ -232,7 +232,7 @@ export default function DashboardPage() {
         {/* Today's Crew Board */}
         <Card>
           <CardHeader>
-            <CardTitle>Today's Crew Board</CardTitle>
+            <CardTitle>Today&apos;s Crew Board</CardTitle>
             <CardDescription>Active field teams</CardDescription>
           </CardHeader>
           <CardContent>
