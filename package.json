@@ -46,8 +46,7 @@
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4",
     "zustand": "^4.5.0",
-    "leaflet": "^1.9.4",
-    "react-leaflet": "^5.0.0"
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
